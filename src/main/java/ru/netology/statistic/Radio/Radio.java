@@ -4,11 +4,11 @@ public class Radio {
     private int currentRadioStationNumber;
     private int volumeSound;
 
-    public int GetCurrentRadioStationNumber() {
+    public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
     }
 
-    public void SetChannelNumber(int channelNumber) {
+    public void setChannelNumber(int channelNumber) {
         if (channelNumber < 0)
             return;
         if (channelNumber > 9)
@@ -30,7 +30,7 @@ public class Radio {
             currentRadioStationNumber--;
     }
 
-    public int GetVolumeSound() {
+    public int getVolumeSound() {
         return volumeSound;
     }
 

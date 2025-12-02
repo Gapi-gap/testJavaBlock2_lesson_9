@@ -6,37 +6,37 @@ public class RadioTest {
     @Test
     public void checkingChannelUpSwitching() {
         Radio radio = new Radio();
-        radio.SetChannelNumber(5);
+        radio.setChannelNumber(5);
         radio.next();
         int expected = 6;
-        Assertions.assertEquals(expected, radio.GetCurrentRadioStationNumber());
+        Assertions.assertEquals(expected, radio.getCurrentRadioStationNumber());
     }
 
     @Test
     public void maximumChannelSwitchingTest() {
         Radio radio = new Radio();
-        radio.SetChannelNumber(9);
+        radio.setChannelNumber(9);
         radio.next();
         int expected = 0;
-        Assertions.assertEquals(expected, radio.GetCurrentRadioStationNumber());
+        Assertions.assertEquals(expected, radio.getCurrentRadioStationNumber());
     }
 
     @Test
     public void checkingForSwitchingTheMinimumChannelDown() {
         Radio radio = new Radio();
-        radio.SetChannelNumber(0);
+        radio.setChannelNumber(0);
         radio.prev();
         int expected = 9;
-        Assertions.assertEquals(expected, radio.GetCurrentRadioStationNumber());
+        Assertions.assertEquals(expected, radio.getCurrentRadioStationNumber());
     }
 
     @Test
     public void channelDownSwitchTest() {
         Radio radio = new Radio();
-        radio.SetChannelNumber(1);
+        radio.setChannelNumber(1);
         radio.prev();
         int expected = 0;
-        Assertions.assertEquals(expected, radio.GetCurrentRadioStationNumber());
+        Assertions.assertEquals(expected, radio.getCurrentRadioStationNumber());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setVolumeSound(56);
         int expected = 56;
-        Assertions.assertEquals(expected, radio.GetVolumeSound());
+        Assertions.assertEquals(expected, radio.getVolumeSound());
     }
 
     @Test
@@ -53,7 +53,7 @@ public class RadioTest {
         radio.setVolumeSound(56);
         int expected = 56;
         radio.setVolumeSound(101);
-        Assertions.assertEquals(expected, radio.GetVolumeSound());
+        Assertions.assertEquals(expected, radio.getVolumeSound());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class RadioTest {
         radio.setVolumeSound(12);
         int expected = 12;
         radio.setVolumeSound(-12);
-        Assertions.assertEquals(expected, radio.GetVolumeSound());
+        Assertions.assertEquals(expected, radio.getVolumeSound());
     }
 
     @Test
@@ -71,7 +71,7 @@ public class RadioTest {
         radio.setVolumeSound(12);
         int expected = 13;
         radio.increaseVolume();
-        Assertions.assertEquals(expected, radio.GetVolumeSound());
+        Assertions.assertEquals(expected, radio.getVolumeSound());
     }
 
     @Test
@@ -80,7 +80,7 @@ public class RadioTest {
         radio.setVolumeSound(12);
         int expected = 11;
         radio.decreaseVolume();
-        Assertions.assertEquals(expected, radio.GetVolumeSound());
+        Assertions.assertEquals(expected, radio.getVolumeSound());
 
     }
 
@@ -90,7 +90,7 @@ public class RadioTest {
         radio.setVolumeSound(0);
         int expected = 0;
         radio.decreaseVolume();
-        Assertions.assertEquals(expected, radio.GetVolumeSound());
+        Assertions.assertEquals(expected, radio.getVolumeSound());
     }
 
     @Test
@@ -99,26 +99,26 @@ public class RadioTest {
         radio.setVolumeSound(100);
         int expected = 100;
         radio.increaseVolume();
-        Assertions.assertEquals(expected, radio.GetVolumeSound());
+        Assertions.assertEquals(expected, radio.getVolumeSound());
     }
     @Test
     public void settingTheChanneToExceedTheMaximumValue()
     {
         Radio radio = new Radio();
-        radio.SetChannelNumber(1);
-        radio.SetChannelNumber(100);
+        radio.setChannelNumber(1);
+        radio.setChannelNumber(100);
         int expected = 1;
-        Assertions.assertEquals(expected, radio.GetCurrentRadioStationNumber());
+        Assertions.assertEquals(expected, radio.getCurrentRadioStationNumber());
 
     }
     @Test
     public void settingTheChannelBelowTheMinimumValue()
     {
         Radio radio = new Radio();
-        radio.SetChannelNumber(6);
-        radio.SetChannelNumber(-12);
+        radio.setChannelNumber(6);
+        radio.setChannelNumber(-12);
         int expected = 6;
-        Assertions.assertEquals(expected, radio.GetCurrentRadioStationNumber());
+        Assertions.assertEquals(expected, radio.getCurrentRadioStationNumber());
 
     }
 }
