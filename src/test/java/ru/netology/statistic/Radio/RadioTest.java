@@ -121,4 +121,56 @@ public class RadioTest {
         Assertions.assertEquals(expected, radio.getCurrentRadioStationNumber());
 
     }
+@Test
+    public void checkingEmptyConstructorInitialization()
+    {
+        Radio radio = new Radio();
+        int expected = 10;
+        Assertions.assertEquals(expected, radio.getMaximumRadioStationNumber());
+    }
+
+    @Test
+    public void oneArgumentConstructorCheck()
+    {
+        Radio radio = new Radio(5);
+        int expected = 5;
+        Assertions.assertEquals(expected, radio.getMaximumRadioStationNumber());
+
+    }
+
+    @Test
+    public void checkPrevRadioStations(){
+        Radio radio = new Radio(5);
+        radio.setRadioStations(2);
+        radio.prevRadioStations();
+        int expected = 1;
+        Assertions.assertEquals(expected, radio.getRadioStation());
+    }
+    @Test
+    public void checkPrevRadioStationsMin(){
+        Radio radio = new Radio(5);
+        radio.setRadioStations(0);
+        radio.prevRadioStations();
+        int expected = 4;
+        Assertions.assertEquals(expected, radio.getRadioStation());
+    }
+
+    @Test
+    public void checkNextRadioStations(){
+        Radio radio = new Radio(5);
+        radio.setRadioStations(2);
+        radio.nextRadioStations();
+        int expected = 3;
+        Assertions.assertEquals(expected, radio.getRadioStation());
+    }
+    @Test
+    public void checkNextRadioStationsMin(){
+        Radio radio = new Radio(5);
+        radio.setRadioStations(4);
+        radio.nextRadioStations();
+        int expected = 0;
+        Assertions.assertEquals(expected, radio.getRadioStation());
+    }
+
 }
+
