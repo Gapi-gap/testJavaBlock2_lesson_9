@@ -9,25 +9,30 @@ public class Radio {
     }
 
     public void setChannelNumber(int channelNumber) {
-        if (channelNumber < 0)
+        if (channelNumber < 0) {
             return;
-        if (channelNumber > 9)
+        }
+        if (channelNumber > 9) {
             return;
+        }
         currentRadioStationNumber = channelNumber;
     }
 
     public void next() {
-        if (currentRadioStationNumber == 9)
+        if (currentRadioStationNumber == 9) {
             currentRadioStationNumber = 0;
-        else
+
+        } else {
             currentRadioStationNumber++;
+        }
     }
 
     public void prev() {
-        if (currentRadioStationNumber == 0)
+        if (currentRadioStationNumber == 0) {
             currentRadioStationNumber = 9;
-        else
+        } else {
             currentRadioStationNumber--;
+        }
     }
 
     public int getVolumeSound() {
@@ -35,10 +40,12 @@ public class Radio {
     }
 
     public void setVolumeSound(int sound) {
-        if (sound < 0)
+        if (sound < 0) {
             return;
-        if (sound > 100)
+        }
+        if (sound > 100) {
             return;
+        }
         volumeSound = sound;
     }
 
